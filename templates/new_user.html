@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register Now</title>
+        <link rel="stylesheet" href="../statics/style.css">
+    </head>
+<body>
+    <nav>
+        <h3>Register Now</h3>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="regi">
+        <form method="POST" action="/register">
+
+            <label for="n-nm">Name:</label>
+            <input type="text" placeholder="FullName" name="n-nm">
+
+            <label for="n-rno">RollNo:</label>
+            <input type="text" placeholder="RollNo" name="n-rno">
+
+            <label for="t-s">Choose:</label>
+            <select name="t-s" required>
+                <option value="" disabled selected>Select</option>
+                <option>Teacher</option>
+                <option>Student</option>
+            </select>  
+
+            <label for="class">Class:</label>     
+            <select>
+                <option value="" disabled selected>Select</option>
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option>Class 10</option>
+            </select>
+
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <div class="end">
+        <p>All copyrights reserved &copy; 2025.</p>
+    </div>
+</body>
+</html>
